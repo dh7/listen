@@ -1,5 +1,5 @@
 # Use an official Python runtime with CUDA as a parent image
-FROM nvidia/cuda:11.0-base-ubuntu20.04
+FROM python:3.8-alpine
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
