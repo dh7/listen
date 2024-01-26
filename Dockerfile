@@ -4,9 +4,6 @@ FROM python:3.8-alpine
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Install Python
-RUN apt-get update && apt-get install -y python3.8 python3-pip
-
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
