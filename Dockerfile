@@ -11,10 +11,10 @@ COPY ./app /listen/app
 #ENV NAME SpeakerDiarization
 
 # Make port 80 available to the world outside this container
-EXPOSE 8000
+EXPOSE 80
 
 # Run app.py with Uvicorn when the container launches
-CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 
 # For debuging purposes, uncomment the following lines
 #COPY ./docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
