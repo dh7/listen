@@ -1,2 +1,2 @@
 # listen
-Transcribe podcast with diarization
+Some tools to transcribe audio files with diarization
