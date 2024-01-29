@@ -11,8 +11,12 @@ def read_root():
 
 @app.get("/nvidia-smi")
 def run_nvidia_smi():
-    process = subprocess.Popen(['nvidia-smi'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    stdout, stderr = process.communicate()
-    if process.returncode != 0:
-        return {"error": stderr.decode()}
-    return {"result": stdout.decode()}
+    try:
+        process = subprocess.Popen(['nvidia-smi'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        stdout, stderr = process.communicate()
+        if process.returncode != 0:
+            return {"error": stderr.decode()}
+        return {"result": stdout.decode()}
+    except Exception as e:
+        return {"error": str(e)}
+    
