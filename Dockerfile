@@ -1,5 +1,5 @@
-# Use an official Python runtime with CUDA as a parent image
-FROM python:3.8-alpine
+# from an image that supports CUDA, Python, and PyTorch
+FROM python:3.10.0-slim
 
 # Copy requirements.txt to the docker image and install Python dependencies
 COPY ./requirements.txt /listen/requirements.txt
